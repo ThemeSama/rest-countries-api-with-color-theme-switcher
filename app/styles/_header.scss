@@ -1,0 +1,46 @@
+#header {
+  padding: 1.75rem 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  @include clearfix();
+
+  .dark-mode &{
+    background-color: $dark-mode-element;
+  }
+
+  @media (max-width: $desktop - 1) {
+    padding: 3rem 0;
+  }
+}
+
+.page-title {
+  float: left;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+
+  @media (max-width: $desktop - 1) {
+    font-size: 1.2rem;
+  }
+}
+
+.theme-switcher {
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  float: right;
+  outline: none;
+  line-height: 1.5rem;
+
+  @media (max-width: $desktop - 1) {
+    height: 1.5rem;
+  }
+
+  .dark-mode &{
+    color: $dark-mode-text;
+  }
+
+  .icon {
+    margin-right: 0.2rem;
+  }
+}
