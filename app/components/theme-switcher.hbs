@@ -1,0 +1,4 @@
+{{yield}}
+<button type="button" class="theme-switcher" {{on "click" this.changeTheme}}>
+  <FaIcon @icon="moon" @prefix={{if this.dark "fas" "far"}} class="icon" /> Dark Mode
+</button>
