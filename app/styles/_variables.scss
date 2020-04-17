@@ -9,6 +9,24 @@ $light-mode-bg: hsl(0, 0%, 98%);
 $dark-mode-text: hsl(0, 0%, 100%);
 $light-mode-element: $dark-mode-text;
 
+$theme-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
 $font-family: 'Nunito Sans', sans-serif;
 $font-size-hp: 14px;
 $font-size-detail: 16px;
+
+// light theme colors
+:root {
+  --theme-element-color: #{$light-mode-element};
+  --theme-bg-color: #{$light-mode-bg};
+  --theme-text-color: #{$light-mode-text};
+  --theme-input-color: #{$light-mode-input};
+}
+
+// dark theme colors
+.dark-mode {
+  --theme-element-color: #{$dark-mode-element};
+  --theme-bg-color: #{$dark-mode-bg};
+  --theme-text-color: #{$dark-mode-text};
+  --theme-input-color: #{$light-mode-input};
+}

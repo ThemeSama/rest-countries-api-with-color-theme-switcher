@@ -1,0 +1,6 @@
+<div class="countries-list">
+  {{#each this.countries as |country|}}
+    <CountryCard @country={{country}} />
+  {{/each}}
+</div>
+{{outlet}}
