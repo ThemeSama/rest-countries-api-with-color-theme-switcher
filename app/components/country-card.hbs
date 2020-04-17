@@ -1,0 +1,15 @@
+<div class="country-card">
+  <a href="#" class="country">
+    <div class="country-flag">
+      <img src={{@country.flag}} alt={{@country.name}} class="country-flag-img" />
+    </div>
+    <div class="country-details">
+      <h3>{{@country.name}}</h3>
+      <ul class="country-more">
+        <li><strong>Population:</strong> {{this.population}}</li>
+        <li><strong>Region:</strong> {{@country.region}}</li>
+        <li><strong>Capital:</strong> {{if @country.capital @country.capital "No capital"}}</li>
+      </ul>
+    </div>
+  </a>
+</div>
