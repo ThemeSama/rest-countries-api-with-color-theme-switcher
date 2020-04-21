@@ -1,0 +1,105 @@
+.search-filter {
+  margin: 3rem 0 0.5rem;
+  @include clearfix();
+}
+
+.search-input {
+  background-color: var(--theme-element-color);
+  color: var(--theme-text-color);
+  border: none;
+  padding: 1.25rem 5rem;
+  box-shadow: $theme-box-shadow;
+  border-radius: $theme-border-radius;
+  outline: none;
+  width: 30rem;
+  max-width: 100%;
+
+  &::placeholder {
+    color: var(--theme-text-color);
+  }
+}
+
+.search-container {
+  position: relative;
+  float: left;
+
+  // mobile
+  @include mobile {
+    float: none;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  font-size: 1.15rem;
+  transform: translate(0, -50%);
+}
+
+.region-select {
+  position: relative;
+  float: right;
+  z-index: 2;
+
+  @include mobile {
+    float: left;
+    margin: 3rem 0 0;
+  }
+}
+
+.region-chooser {
+  background-color: var(--theme-element-color);
+  border: none;
+  text-align: left;
+  border-radius: $theme-border-radius;
+  color: var(--theme-text-color);
+  padding: 1.25rem;
+  display: inline-block;
+  min-width: 12.5rem;
+  cursor: pointer;
+  outline: none;
+
+  @include mobile {
+    min-width: 14rem;
+  }
+}
+
+.region-icon {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+.region-list {
+  position: absolute;
+  width: 100%;
+  z-input: 2;
+  background-color: var(--theme-element-color);
+  padding: 1rem 1.25rem;
+  top: 100%;
+  margin-top: 0.25rem;
+  border-radius: $theme-border-radius;
+  opacity: 0;
+  transition: opacity .3s ease;
+  overflow: hidden;
+
+  &.show {
+    opacity: 1;
+    overflow: visible;
+  }
+}
+
+.region-btn {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: var(--theme-text-color);
+  text-align: left;
+  padding: 0.3rem 0;
+  outline: none;
+  cursor: pointer;
+}

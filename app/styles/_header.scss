@@ -4,7 +4,7 @@
   @include clearfix();
   background-color: var(--theme-element-color);
 
-  @media (max-width: $desktop - 1) {
+  @include mobile {
     padding: 3rem 0;
   }
 }
@@ -14,7 +14,7 @@
   font-size: 1.5rem;
   line-height: 1.5rem;
 
-  @media (max-width: $desktop - 1) {
+  @include mobile {
     font-size: 1.2rem;
   }
 }
@@ -30,7 +30,7 @@
   line-height: 1.5rem;
   color: var(--text-color);
 
-  @media (max-width: $desktop - 1) {
+  @include mobile {
     height: 1.5rem;
   }
 

@@ -1,3 +1,15 @@
+<div class="search-filter">
+  <div class="search-container">
+    <FaIcon @icon="search" class="search-icon" />
+    <Input 
+      @value={{this.filterText}}
+      @key-up={{fn this.filterByName}}
+      placeholder="Search for a country..."
+      class="search-input" />
+  </div>
+  <SelectRegion @filter={{this.filterByRegion}} />
+</div>
+
 <div class="countries-list">
   {{#each this.countries as |country|}}
     <CountryCard @country={{country}} />
