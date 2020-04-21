@@ -1,7 +1,11 @@
 <div class="country-card">
-  <a href="#" class="country">
+  <a href="#" class={{concat "country " this.status}}>
     <div class="country-flag">
-      <img src={{@country.flag}} alt={{@country.name}} class="country-flag-img" />
+      <img 
+        src={{@country.flag}}
+        alt={{@country.name}}
+        class="country-flag-img"
+        {{on "load" this.imgLoaded}} />
     </div>
     <div class="country-details">
       <h3>{{@country.name}}</h3>
