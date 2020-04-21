@@ -22,6 +22,13 @@
   box-shadow: $theme-box-shadow;
   text-decoration: none;
   border-radius: 4px;
+
+  opacity: 0;
+  transition: opacity .3s ease;
+
+  &.img-loaded {
+    opacity: 1;
+  }
 }
 
 .country-flag {
@@ -31,6 +38,11 @@
   width: 100%;
   height: 10rem;
   border-radius: 4px 4px 0 0;
+
+  // mobile
+  @media (max-width: $desktop - 1) {
+    height: 12.6rem;
+  }
 }
 
 .country-flag-img {
@@ -38,9 +50,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: auto;
-  min-width: 100%;
-  height: 120%;
+  max-width: 100%;
+  max-height: 100%;
+
+  &.fix-width {
+    width: 100%;
+    max-height: none;
+  }
+
+  &.fix-height {
+    height: 100%;
+    max-width: none;
+  }
 }
 
 .country-details {
