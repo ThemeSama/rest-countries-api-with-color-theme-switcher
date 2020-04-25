@@ -1,1 +1,52 @@
+<LinkTo @route="index" class="back-btn"><FaIcon @icon="long-arrow-alt-left" class="back-icon"/> Back</LinkTo>
+
+<div class="detail-row">
+  <div class="detail-column">
+    <div class="country-flag big">
+      <img 
+        src={{this.country.flag}}
+        alt={{this.country.name}}
+        class="country-flag-img fix-width" />
+    </div>
+  </div>
+  <div class="detail-column">
+    <h2 class="detail-country-title">{{this.country.name}}</h2>
+    <div class="detail-row">
+      <div class="detail-column">
+        <ul class="country-more">
+          <li><strong>Native Name:</strong> {{this.country.nativeName}}</li>
+          <li><strong>Population:</strong> {{number-seperator number=this.country.population}}</li>
+          <li><strong>Region:</strong> {{this.country.region}}</li>
+          <li><strong>Sub Region:</strong> {{this.country.subregion}}</li>
+          {{#if this.country.capital}}
+            <li><strong>Capital:</strong> {{this.country.capital}}</li>
+          {{/if}}
+        </ul>
+      </div>
+      <div class="detail-column align-top">
+        <ul class="country-more">
+          <li><strong>Top Level Domain:</strong> {{this.country.topLevelDomain}}</li>
+          <li><strong>Currencies:</strong> {{this.currencies}}</li>
+          <li><strong>Languages:</strong> {{this.languages}}</li>
+        </ul>
+      </div>
+    </div>
+    
+    {{#if this.country.borders}}
+    <div class="country-borders">
+      <span class="country-border-title">Border Countries:</span>
+      {{#each this.country.borders as |border|}}
+        {{#if border.alpha2Code}}
+          <LinkTo @route="detail" @model={{lowercase border.alpha2Code}} class="border-btn">{{border.name}}</LinkTo>
+        {{/if}}
+      {{/each}}
+    </div>
+    {{/if}}
+
+  </div>
+</div>
+
+
+
+
 {{outlet}}

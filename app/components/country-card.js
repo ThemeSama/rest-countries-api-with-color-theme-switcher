@@ -4,12 +4,6 @@ import { action } from '@ember/object';
 
 export default class CountryCardComponent extends Component {
   @tracked status = 'img-loading';
-  
-  // population separators
-  get population() {
-    // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
-    return this.args.country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
 
   @action
   imgLoaded(e) {

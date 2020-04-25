@@ -1,0 +1,84 @@
+.border-btn,
+.back-btn {
+  background-color: var(--theme-element-color);
+  color: var(--theme-text-color);
+  border: none;
+  padding: 0.75rem 2.5rem;
+  box-shadow: $theme-box-shadow;
+  border-radius: $theme-border-radius;
+  text-decoration: none;
+  margin: 5rem 0;
+  font-size: $font-size-detail;
+  display: inline-block;
+  @include clearfix();
+
+  @include mobile {
+    margin: 3rem 0 5rem;
+  }
+
+  .back-icon {
+    font-size: $font-size-hp;
+    margin-right: 0.35rem;
+  }
+}
+
+.border-btn {
+  float: left;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem 0.25rem 0;
+}
+
+.detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -3.75rem;
+  font-size: $font-size-detail;
+  justify-content: center;
+  align-items: center;
+  @include clearfix();
+}
+
+.detail-column {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 3.75rem;
+
+  &.align-top {
+    align-self: flex-start;
+  }
+
+  @include mobile {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.detail-country-title {
+  font-size: 2rem;
+
+  @include mobile {
+    margin: 0 0 1rem;
+  }
+}
+
+.country-borders {
+  margin: 2rem 0;
+  @include clearfix();
+
+  @include mobile {
+    margin: 1rem 0 2rem;
+  }
+}
+
+.country-border-title {
+  float: left;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  margin-right: 0.5rem;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}

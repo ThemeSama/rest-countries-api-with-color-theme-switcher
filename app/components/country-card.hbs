@@ -1,5 +1,5 @@
 <div class="country-card">
-  <a href="#" class={{concat "country " this.status}}>
+  <LinkTo @route="detail" @model={{lowercase @country.alpha2Code}} class={{concat "country " this.status}}>
     <div class="country-flag">
       <img 
         src={{@country.flag}}
@@ -10,10 +10,10 @@
     <div class="country-details">
       <h3>{{@country.name}}</h3>
       <ul class="country-more">
-        <li><strong>Population:</strong> {{this.population}}</li>
+        <li><strong>Population:</strong> {{number-seperator number=@country.population}}</li>
         <li><strong>Region:</strong> {{@country.region}}</li>
         <li><strong>Capital:</strong> {{if @country.capital @country.capital "No capital"}}</li>
       </ul>
     </div>
-  </a>
+  </LinkTo>
 </div>
