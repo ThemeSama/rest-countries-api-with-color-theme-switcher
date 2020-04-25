@@ -5,20 +5,28 @@ import { tracked } from '@glimmer/tracking';
 export default class IndexController extends Controller {
   @tracked countries;
   @tracked filterText;
+  @tracked filterRegion;
 
   @action
-  filterByName(key) {
+  filterCountries(key) {
     let keyMatch = new RegExp(key, 'gi');
     this.countries = this.model.filter(country => {
-      return country.name.match(keyMatch);
+      //without region filter
+      if( !this.filterRegion ) {
+        return country.name.match(keyMatch);
+      }
+      
+      // with region filter
+      return country.name.match(keyMatch) && country.region.startsWith(this.filterRegion);
     });
   }
 
   @action
   filterByRegion(region) {
-    this.filterText = '';
-    this.countries = this.model.filter(country => {
-      return country.region.startsWith(region);
-    });
+    // set region filter
+    this.filterRegion = region;
+
+    // call filter method
+    this.filterCountries(this.filterText);
   }
 }

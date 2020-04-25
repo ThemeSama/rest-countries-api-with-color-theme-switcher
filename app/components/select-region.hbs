@@ -1,6 +1,8 @@
 <div class="region-select">
   <button type="button" class="region-chooser" {{on "click" this.toggleDropdown}}>{{this.regionText}}</button>
-  <FaIcon @icon={{if this.regionFilter "times" "angle-down"}} class="region-icon" {{on "click" this.clearRegion}} />
+  <button type="button" class="region-icon" {{on "click" this.clearRegion}}>
+    <FaIcon @icon={{if this.regionFilter "times" "angle-down"}} />
+  </button>
   <div class={{concat "region-list " (if this.dropdown "show")}}>
     {{#each this.regionList as |region|}}
       <button type="button" class="region-btn" {{on "click" (fn this.filterByRegion region)}}>{{region}}</button>
