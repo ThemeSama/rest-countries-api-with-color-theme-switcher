@@ -5,14 +5,19 @@
       @value={{this.filterText}}
       @key-up={{fn this.filterCountries}}
       placeholder="Search for a country..."
+      title="Search for a country..."
       class="search-input" />
   </div>
   <SelectRegion @filter={{this.filterByRegion}} />
 </div>
 
-<div class="countries-list">
-  {{#each this.countries as |country|}}
-    <CountryCard @country={{country}} />
-  {{/each}}
-</div>
+{{#if this.countries}}
+  <div class="countries-list">
+    {{#each this.countries as |country|}}
+      <CountryCard @country={{country}} />
+    {{/each}}
+  </div>
+{{else}}
+  <p class="no-country-info"><FaIcon @icon="info-circle" class="no-country-icon" /> No country was found on the planet Earth that matches your search criteria!</p>
+{{/if}}
 {{outlet}}
