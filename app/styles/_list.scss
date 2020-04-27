@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 -2.5rem;
+
+  @include mobile {
+    margin: 0;
+  }
 }
 
 .country-card {
@@ -12,6 +16,7 @@
   @include mobile {
     flex: 100%;
     max-width: 100%;
+    padding: 2.5rem 0;
   }
 }
 
@@ -56,7 +61,7 @@
 
   // mobile
   @include mobile {
-    height: 12.6rem;
+    height: auto;
   }
 }
 
@@ -67,6 +72,15 @@
   transform: translate(-50%, -50%);
   max-width: 100%;
   max-height: 100%;
+
+  @include mobile {
+    position: relative;
+    width: 100% !important;
+    height: auto !important;
+    transform: none;
+    top: 0;
+    left: 0;
+  }
 
   &.fix-width {
     width: 100%;
@@ -94,5 +108,17 @@
 
   li {
     padding: 0.2rem 0;
+  }
+}
+
+.no-country-info {
+
+  @include mobile {
+    margin-top: 2.5rem;
+  }
+
+  .no-country-icon {
+    opacity: 0.3;
+    margin-right: 0.25rem;
   }
 }

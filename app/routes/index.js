@@ -18,5 +18,8 @@ export default class IndexRoute extends Route {
     super.setupController(controller, model);
 
     controller.set('countries', model);
+
+    // clear filter text
+    controller.set('filterText', '');
   }
 }
