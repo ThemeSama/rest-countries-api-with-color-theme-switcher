@@ -1,14 +1,14 @@
 <div class="country-card">
-  <LinkTo @route="detail" @model={{lowercase @country.alpha2Code}} class={{concat "country " this.status}}>
+  <LinkTo @route="detail" @model={{lowercase @country.cca3}} class={{concat "country " this.status}}>
     <div class="country-flag">
       <img 
-        src={{@country.flag}}
-        alt={{@country.name}}
+        src={{@country.flags.svg}}
+        alt={{@country.name.common}}
         class="country-flag-img"
         {{on "load" this.imgLoaded}} />
     </div>
     <div class="country-details">
-      <h3>{{@country.name}}</h3>
+      <h3>{{@country.name.common}}</h3>
       <ul class="country-more">
         <li><strong>Population:</strong> {{number-seperator number=@country.population}}</li>
         <li><strong>Region:</strong> {{@country.region}}</li>

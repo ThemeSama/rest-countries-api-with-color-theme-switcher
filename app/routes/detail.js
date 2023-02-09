@@ -23,11 +23,14 @@ export default class DetailRoute extends Route {
   setupController(controller, model) {
     super.setupController(controller, model);
 
-    controller.set('country', model);
+    const [country] = model;
+
+    controller.set('country', country);
 
     // get borders pretty names
-    if( typeof model !== "undefined" && isArray(model.borders) && model.borders.length > 0 ) {
-      fetch(this.host + "alpha?fields=name;alpha2Code&codes=" + model.borders.join(";")).then(response => {
+    if( typeof country !== "undefined" && isArray(country.borders) && country.borders.length > 0 ) {
+      console.log(country.borders);
+      fetch(this.host + "alpha?fields=name,cca3&codes=" + country.borders.join(",")).then(response => {
         if (response.ok) {
           response.json().then(borders => {
             controller.set('country.borders', borders);

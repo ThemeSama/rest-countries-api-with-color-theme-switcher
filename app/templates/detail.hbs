@@ -5,32 +5,32 @@
     <div class="detail-column">
       <div class="country-flag big">
         <img 
-          src={{this.country.flag}}
-          alt={{this.country.name}}
+          src={{this.country.flags.svg}}
+          alt={{this.country.name.common}}
           class="country-flag-img fix-width" />
       </div>
     </div>
     <div class="detail-column">
-      <h2 class="detail-country-title">{{this.country.name}}</h2>
+      <h2 class="detail-country-title">{{this.country.name.common}}</h2>
       <div class="detail-row">
         <div class="detail-column">
           <ul class="country-more">
-            <li><strong>Native Name:</strong> {{this.country.nativeName}}</li>
+            <li><strong>Native Name(s):</strong> {{meta-keys meta=this.country.name.nativeName prop="common"}}</li>
             <li><strong>Population:</strong> {{number-seperator number=this.country.population}}</li>
             <li><strong>Region:</strong> {{this.country.region}}</li>
             {{#if this.country.subregion}}
               <li><strong>Sub Region:</strong> {{this.country.subregion}}</li>
             {{/if}}
             {{#if this.country.capital}}
-              <li><strong>Capital:</strong> {{this.country.capital}}</li>
+              <li><strong>Capital:</strong> {{meta-keys meta=this.country.capital}}</li>
             {{/if}}
           </ul>
         </div>
         <div class="detail-column align-top">
           <ul class="country-more">
-            <li><strong>Top Level Domain:</strong> {{this.country.topLevelDomain}}</li>
-            <li><strong>Currencies:</strong> {{this.currencies}}</li>
-            <li><strong>Languages:</strong> {{this.languages}}</li>
+            <li><strong>Top Level Domain:</strong> {{this.country.tld}}</li>
+            <li><strong>Currencies:</strong> {{meta-keys meta=this.country.currencies prop="name"}}</li>
+            <li><strong>Languages:</strong> {{meta-keys meta=this.country.languages}}</li>
           </ul>
         </div>
       </div>
@@ -39,8 +39,8 @@
       <div class="country-borders">
         <span class="country-border-title">Border Countries:</span>
         {{#each this.country.borders as |border|}}
-          {{#if border.alpha2Code}}
-            <LinkTo @route="detail" @model={{lowercase border.alpha2Code}} class="border-btn">{{border.name}}</LinkTo>
+          {{#if border.cca3}}
+            <LinkTo @route="detail" @model={{lowercase border.cca3}} class="border-btn">{{border.name.common}}</LinkTo>
           {{/if}}
         {{/each}}
       </div>

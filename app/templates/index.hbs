@@ -1,12 +1,12 @@
 <div class="search-filter">
   <div class="search-container">
     <FaIcon @icon="search" class="search-icon" />
-    <Input 
-      @value={{this.filterText}}
-      @key-up={{fn this.filterCountries}}
+    <input 
+      type="text" 
       placeholder="Search for a country..."
-      title="Search for a country..."
-      class="search-input" />
+      aria-label="Search for a country..."
+      class="search-input"
+      {{on "keyup" this.updateFilterText}} />
   </div>
   <SelectRegion @filter={{this.filterByRegion}} />
 </div>
