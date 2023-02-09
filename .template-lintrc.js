@@ -1,10 +1,8 @@
 'use strict';
 
 module.exports = {
-  extends: 'octane',
+  extends: 'recommended',
   rules: {
-    'no-curly-component-invocation': { 
-      allow: ['number-seperator']
-    }
+    'no-curly-component-invocation': { allow: ['number-seperator', 'meta-keys'] }
   }
 };
